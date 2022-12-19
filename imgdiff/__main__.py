@@ -14,8 +14,8 @@ def main():
 
 	args = parser.parse_args()
 
-	a = np.asarray(Image.open(args.a)).astype(np.int16)
-	b = np.asarray(Image.open(args.b)).astype(np.int16)
+	a = np.asarray(Image.open(args.a).convert('RGB')).astype(np.int16)
+	b = np.asarray(Image.open(args.b).convert('RGB')).astype(np.int16)
 
 	if a.shape != b.shape:
 		print('cannot compare images of different sizes')
@@ -23,7 +23,6 @@ def main():
 
 
 	diff = np.abs(a-b) if args.abs else np.maximum(0, b-a) if args.negative else np.maximum(0, a-b)
-	diff[:,:,3] = 255
 
 
 	ret = Image.fromarray(diff.astype(np.uint8))
