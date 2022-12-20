@@ -11,6 +11,7 @@ def main():
 	parser.add_argument('-n', '--negative', action='store_true')
 	parser.add_argument('-o')
 	parser.add_argument('-b', '--background', action='store_true')
+	parser.add_argument('-x', '--multiply', type=int, default=1)
 
 	args = parser.parse_args()
 
@@ -23,7 +24,7 @@ def main():
 
 
 	diff = np.abs(a-b) if args.abs else np.maximum(0, b-a) if args.negative else np.maximum(0, a-b)
-
+	diff *= args.multiply
 
 	ret = Image.fromarray(diff.astype(np.uint8))
 
