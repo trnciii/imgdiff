@@ -6,7 +6,7 @@ build-backend = 'setuptools.build_meta'
 name = 'imgdiff'
 dependencies = [
 	'numpy',
-	'sixelpack @ git+https://github.com/trnciii/sixelpack#1.2',
+	'sixelpack @ git+https://github.com/trnciii/sixelpack#v1.2',
 ]
 dynamic = ['version']
 
