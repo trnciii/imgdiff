@@ -5,7 +5,8 @@ setup(
 	version='1.0',
 	url='https://github.com/trnciii/imgdiff',
 	license='MIT',
-	packages={'imgdiff':['imgdiff']},
+	packages = find_packages(),
+	# packages={'imgdiff':['imgdiff']},
 	install_requires=[
 		'numpy',
 		'libsixel-python',

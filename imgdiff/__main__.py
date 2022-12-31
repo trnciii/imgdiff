@@ -1,6 +1,6 @@
 import argparse, numpy as np
 from PIL import Image, ImageChops
-from . import sixel
+from .ayame import sixel
 
 def main():
 	parser = argparse.ArgumentParser()
